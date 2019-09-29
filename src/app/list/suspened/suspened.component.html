@@ -1,0 +1,33 @@
+<!-- <div class="table-responsive" *ngIf="invoices.length>0;else emptyData">          
+    <table class="table table-hover">
+      <thead>
+        <tr>
+         <th *ngFor="let tableHeader of tableHeaderList">{{tableHeader}}</th>
+         </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let invoice of invoices" (click)="navigateToDetail(invoice)"> 
+              <td>{{invoice.billto}}</td>
+              <td>{{invoice.invoicenumber}}</td>
+              <td>{{invoice.issuancedate}}</td>
+              <td>{{invoice.currencycode}} {{invoice.billingamount}}</td>
+              <td>{{invoice.suspensionreason}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <ng-template #emptyData>
+        <img src="../../../assets/nodata.jpg" id="no_data" class="img-responsive">
+        </ng-template> -->
+        <div *ngIf="invoices.length>0;else emptyData">
+        <app-inboxlist 
+          [inboxHeader] ="tableHeaderList"  
+          [dataList]="invoices" 
+          [keyList]="keyList"
+        (navigateToDetailScreen)="gotToDetail($event)">
+        </app-inboxlist>
+</div>
+
+        <ng-template #emptyData>
+          <img src="../../../assets/nodata.jpg" id="no_data" class="img-responsive">
+          </ng-template>

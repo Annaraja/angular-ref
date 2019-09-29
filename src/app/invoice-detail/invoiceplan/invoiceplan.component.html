@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form [formGroup]="invoicePlanForm" (ngSubmit)="saveInvoice()">
+        <div style='float: right;'>
+        <button class="btn btn-danger" type="button"
+        (click)="changeEdit()"> {{ editFlag === true ? 'Restrict update ' : 'Allow edit' }}    </button>
+      </div>
+        <div class="row">
+          <div class="col-xs-12">
+              <div class="form-group">
+            <label for="billto">Billto</label>
+            <input type="text" id="billto" name="billto" class="form-control" formControlName="billto" 
+            [readonly]="!editFlag">
+          </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+              <label for="invoicenumber">Invoice number</label>
+              <input type="text" id="invoicenumber" name="invoicenumber" class="form-control" formControlName="invoicenumber"
+              [readonly]="!editFlag">
+            </div>
+          </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-12">
+                  <div class="form-group">
+                <label for="billingamount">Billing Amount</label>
+                <input type="text" id="billingamount" name="billingamount"  class="form-control" formControlName="billingamount"
+                readonly>
+              </div> 
+            </div>
+          </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                  <label for="issuancedate">Issuance date</label>
+                  <input type="date" id="issuancedate" name="issuancedate" class="form-control" formControlName="issuancedate"
+                  [readonly]="!editFlag">
+                </div>
+              </div>  
+            </div>    
+            <button class="btn btn-primary" >Save Invoice</button>  
+      </form>
+      </div>
+      </div>
+      <div class="alert alert-success" *ngIf="updated">
+Updated Sucessfully
+      </div>
+    </div>
+    

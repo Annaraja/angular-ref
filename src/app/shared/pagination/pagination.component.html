@@ -1,0 +1,7 @@
+<ul class="pagination">
+    <li *ngIf="currentPage !== 1"  (click)="onPrevious()"><a >Prev</a></li>
+ <li><a>
+   {{ currentPage }} of  {{totalPage}}
+  </a> </li>
+  <li *ngIf="currentPage !== totalPage" (click)="onNext()"><a>Next</a></li>
+</ul>

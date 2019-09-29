@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <form [formGroup]="invoiceCollectForm" (ngSubmit)="saveInvoice()">
+          <div style='float: right;'>
+          <button class="btn btn-danger" type="button"
+          (click)="changeEdit()"> {{ editFlag === true ? 'Restrict update ' : 'Allow edit' }}    </button>
+        </div>
+          <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+              <label for="billto">Billto</label>
+              <input type="text" id="billto" name="billto" class="form-control" formControlName="billto" 
+              readonly>
+            </div>
+          </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group">
+                <label for="accountnumber">Account Number</label>
+                <input type="text" id="accountnumber" name="accountnumber" class="form-control" formControlName="accountnumber"
+                [readonly]="!editFlag">
+              </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                  <label for="bankname">Bank Name</label>
+                  <input type="text" id="bankname" name="bankname"  class="form-control" formControlName="bankname"
+                  [readonly]="!editFlag">
+                </div> 
+              </div>
+            </div>
+              <div class="row">
+                  <div class="col-xs-12">
+                      <div class="form-group">
+                    <label for="branchname">Branch Name</label>
+                    <input type="text" id="branchname" name="branchname" class="form-control" formControlName="branchname"
+                    [readonly]="!editFlag">
+                  </div>
+                </div>  
+              </div>
+            
+              <div class="row">
+                  <div class="col-xs-12">
+                      <div class="form-group">
+                    <label for="ifsccode">IFSCcode</label>
+                    <input type="text" id="ifsccode" name="ifsccode" class="form-control" formControlName="ifsccode"
+                    [readonly]="!editFlag">
+                  </div>
+                </div>  
+              </div>
+              
+              <button class="btn btn-primary" >Save Invoice</button>  
+        </form>
+        </div>
+        </div>
+      </div>
+      

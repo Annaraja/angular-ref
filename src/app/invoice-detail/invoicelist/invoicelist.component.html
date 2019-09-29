@@ -1,0 +1,31 @@
+<div class="table-responsive">
+        <label >Invoice Details</label>          
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+             <th *ngFor="let tableHeader of tableHeaderList">{{tableHeader}}</th>
+             </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let invoiceDetail of invoiceDetails; let i =index ">
+                  <td >{{invoiceDetail.rowno}}</td>
+                  <td  (keyup)="change($event)" (blur)="setToGrid('item',i)" oncopy="return false" oncut="return false" onpaste="return false" contenteditable="true">
+                 {{invoiceDetail.item}}
+                </td>
+                  <td contenteditable="true" (keyup)="changeQuantity($event,i,'quantity')" >{{invoiceDetail.quantity}}</td>
+                  <td >{{invoiceDetail.unitprice}}</td>
+                  <td>{{invoiceDetail.quantity * invoiceDetail.unitprice}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div>
+        <button class="btn btn-primary" (click)="saveInvoice()">Save Invoice</button>  
+        <div class="alert alert-success" *ngIf="updated">
+            Updated Sucessfully
+                  </div>
+                </div>
+   <div style="float: right">
+     <label >Total Amount</label>
+     <input type="number" disabled readonly name="totalAmount" [(ngModel)]="totalAmount">
+ </div>       

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+                <div  class="navbar-header">
+                    <a>
+                            <img src='https://image.shutterstock.com/image-illustration/erp-round-glossy-web-icon-260nw-508868674.jpg' class="img-responsive">
+                    </a>
+                    </div>
+    <ul class="nav navbar-nav">
+        <li *ngIf="authenticated" ><a style="cursor : pointer" routerLink="/">Home</a></li>
+        <li *ngIf="!authenticated" ><a style="cursor : pointer">Authenticate</a></li>        
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+                <li *ngIf="authenticated"   (click)="onLogOut()"><a  style="cursor : pointer">Logout</a></li>
+        </ul>
+        </div>
+
+</nav>

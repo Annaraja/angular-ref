@@ -1,0 +1,17 @@
+<div class="table-responsive" (scroll)="tableScrolling($event)">          
+  <table class="table table-hover" >
+    <thead>
+      <tr>
+        <th *ngIf="useCheckBox"><input [checked]="selectAllMain" type="checkbox" (click)="checkAll($event)" ></th>
+       <th *ngFor="let header of inboxHeader" >{{header}}</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let value of dataList;let currentIndex=index ">
+        <td *ngIf="useCheckBox"> <input type="checkbox" [checked]="selectAll" (click)="checkIndividual(currentIndex,$event)"> </td>
+             <td *ngFor="let key of keyList" (click)="navigateToDetail(value,currentIndex,dataList.length)">             
+               {{value[key]}}</td>                           
+      </tr>
+    </tbody>
+  </table>
+  </div>

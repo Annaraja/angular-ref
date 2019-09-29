@@ -1,0 +1,39 @@
+label{
+    font-size: large;
+}
+
+.delayed{
+    color: red;
+}
+
+.divider-10 {
+    width:100%; 
+    min-height:1px; 
+    margin-top:10px; 
+    margin-bottom:10px;  
+    display:inline-block; 
+    position:relative;
+}
+
+.confimation{
+    color: blue;
+}
+.suspended{
+    color: orange;
+}
+
+.issued{
+    color:green;
+}
+#no_data{
+    height: 500px;
+    margin-left: 20%;
+}
+
+app-spinner{
+   margin-top:200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px
+}
+

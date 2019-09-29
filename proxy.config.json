@@ -1,0 +1,55 @@
+{
+
+"/invoices/getAllInvoices":{
+        "target": "http://localhost:8080",
+        "secure": true,
+        "changeOrigin": true
+},
+
+"/invoices/getInvoiceById":{
+    "target": "http://localhost:8080",
+    "secure": true,
+    "changeOrigin": true
+},
+
+
+"/invoices/issueInvoices":{
+  "target": "http://localhost:8080",
+  "secure": true,
+  "changeOrigin": true
+},
+
+
+
+"/invoices/updateInvoice":{
+  "target": "http://localhost:8080",
+  "secure": true,
+  "changeOrigin": true
+},
+"/invoices/updateInvoiceCollect":{
+  "target": "http://localhost:8080",
+  "secure": true,
+  "changeOrigin": true
+},
+"/invoices/updateInvoiceDetail":{
+  "target": "http://localhost:8080",
+  "secure": true,
+  "changeOrigin": true
+},
+  "/authority/signUp": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/oauth/token": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/authority/duplicateEmail":{
+    "target": "http://localhost:8080",
+    "secure": true,
+    "changeOrigin": true
+  }
+
+}

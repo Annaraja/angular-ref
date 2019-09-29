@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+<ul class="nav nav-tabs">
+  <li><a [routerLink]="['/invoicedetail',presentPage-1]">Invoice Plan</a> </li>
+  <li><a routerLink="list">Invoice Details</a> </li>
+  <li><a routerLink="collect">Invoice Collect</a> </li>
+</ul>
+</div>
+</div>
+
+<app-pagination [currentPage]=presentPage [totalPage]=lastPage  
+[pagesList]=keyList
+(gotPrev)="toPrevious($event)" (gotNext)="toNext($event)"></app-pagination>
+
+<div class="row">
+  <router-outlet></router-outlet>
+</div>
+</div>

@@ -1,0 +1,17 @@
+#no_data{
+    height: 500px;
+    margin-left: 20%;
+}
+
+input{
+    width:50%;
+    margin-left: 20%;
+
+}
+
+#facet{
+    background-color: rgb(232, 226, 225);
+    height: 675px !important;
+    overflow-y: auto;
+}
+

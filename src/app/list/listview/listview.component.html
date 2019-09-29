@@ -1,0 +1,38 @@
+<ng-template appPlaceHolder></ng-template>
+<div class="col-md-8">
+
+    <div class="row">
+    <input type="text" class="form-control" placeholder="Search for customer name, invoice number,description"
+    (click)="inputSelected()" >
+    <hr>
+    </div>
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <div *ngIf=" isDelayed || isAvailableForConfirmation || isSuspended || isIssued">
+           <div class="row" *ngIf="isDelayed">
+    <label >Delayed Invoices</label>
+    <ul class="list-group-item" (click)="navigateToDelay()"   style="cursor : pointer"
+     [ngClass]="{ delayed: isDelayed }">There are {{  delayedLength }} invoices are delayed</ul>
+    </div>
+    <div class="divider-10"></div>
+    <div class="row" *ngIf="isAvailableForConfirmation">
+        <label >Waiting for confirmation</label>
+        <ul class="list-group-item"  style="cursor : pointer"
+         [ngClass]="{ confimation: isAvailableForConfirmation }">There are {{ waitingLength}} invoices are ready to approve</ul>
+        </div>
+        <div class="divider-10"></div>
+        <div class="row" *ngIf="isSuspended">
+            <label >Suspended Invoices</label>
+            <ul class="list-group-item"  style="cursor : pointer"
+             [ngClass]="{ suspended: isSuspended }">There are {{ suspendedLength}} invoices are suspended</ul>
+            </div>  
+            <div class="divider-10"></div>
+            <div class="row" *ngIf="isIssued">
+                <label >Issued Invoices</label>
+                <ul class="list-group-item"  style="cursor : pointer"
+                 [ngClass]="{ issued: isIssued }">There are {{ issuedLength}} invoices are issued</ul>
+                </div>  
+            </div>  
+            <div *ngIf=" !isDelayed && !isAvailableForConfirmation && !isSuspended && !isIssued && !isLoading">
+     <img src="../../../assets/nodata.jpg" id="no_data" class="img-responsive">
+            </div>
+    </div>
